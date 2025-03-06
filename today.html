@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <!-- <title>今日任务</title> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .navigation a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #2196F3;
+            font-weight: bold;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .task-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .task-section {
+            margin-bottom: 30px;
+        }
+        .task-section h2 {
+            color: #2196F3;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+        .task-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border: 1px solid #eee;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        .task-item:hover {
+            background-color: #f9f9f9;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #ccc;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .avatar-blue { background-color: #2196F3; }
+        .avatar-orange { background-color: #FF9800; }
+        .avatar-pink { background-color: #E91E63; }
+        .task-content {
+            flex-grow: 1;
+        }
+        .task-name {
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .task-details {
+            font-size: 12px;
+            color: #666;
+        }
+        .task-hours {
+            background-color: #e3f2fd;
+            color: #1976D2;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-left: 12px;
+        }
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            color: white;
+            margin-left: 8px;
+        }
+        .status-pending { background-color: #2196F3; }
+        .status-processing { background-color: #4CAF50; }
+        .status-completed { background-color: #9E9E9E; }
+        .summary {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .stat-box {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            min-width: 150px;
+            margin: 10px;
+        }
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2196F3;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>今日任务概览</h1>
+    <div class="navigation">
+        <a href="/">列表视图</a>
+        <a href="/calendar">日历视图</a>
+        <a href="/gantt">甘特图视图</a>
+        <a href="/today">今日任务</a>
+    </div>
+
+    
+
+    <div class="summary" id="taskSummary">
+        <!-- 统计信息将通过 JavaScript 动态填充 -->
+    </div>
+
+    <div class="task-container">
+        <div class="task-section" id="completedTasks">
+            <h2>今日完成的任务</h2>
+            <ul class="task-list">
+                <!-- 今日完成的任务将通过 JavaScript 动态填充 -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function getAvatarColor(name) {
+            const colors = ['blue', 'orange', 'pink'];
+            const hash = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+            return colors[hash % colors.length];
+        }
+
+        function formatDate(date) {
+            return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+        }
+
+            function createTaskElement(task, index) {
+                const li = document.createElement('li');
+                li.className = 'task-item';
+                
+                const avatarColor = getAvatarColor(task.name);
+                const avatarDiv = document.createElement('div');
+                avatarDiv.className = `avatar avatar-${avatarColor}`;
+                avatarDiv.textContent = task.name[0];
+                
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'task-content';
+                
+                const nameDiv = document.createElement('div');
+                nameDiv.className = 'task-name';
+                nameDiv.textContent = task.task;
+                
+                const detailsDiv = document.createElement('div');
+                detailsDiv.className = 'task-details';
+                
+                const assigneeSpan = document.createElement('span');
+                assigneeSpan.textContent = `负责人: ${task.name}`;
+                
+                // 添加完成时间
+                const completedTimeSpan = document.createElement('span');
+                completedTimeSpan.style.marginLeft = '12px';
+                completedTimeSpan.textContent = `完成时间: ${task.completedTime}`;
+                
+                // 添加起止时间
+                const timeSpan = document.createElement('span');
+                timeSpan.style.marginLeft = '12px';
+                timeSpan.textContent = `计划时间: ${task.startTime} 至 ${task.endTime}`;
+                
+                // 添加工作时长
+                const hoursSpan = document.createElement('span');
+                hoursSpan.className = 'task-hours';
+                hoursSpan.textContent = task.hours ? `${task.hours}小时` : '--';
+                
+                // 组装元素
+                detailsDiv.appendChild(assigneeSpan);
+                detailsDiv.appendChild(completedTimeSpan);
+                detailsDiv.appendChild(timeSpan);
+                detailsDiv.appendChild(hoursSpan);
+                
+                contentDiv.appendChild(nameDiv);
+                contentDiv.appendChild(detailsDiv);
+                
+                li.appendChild(avatarDiv);
+                li.appendChild(contentDiv);
+                
+                return li;
+            }
+
+        // 全局数据存储
+        window.employeeData = { employees: [] };
+
+        function updateTasks() {
+            fetch('data.json?' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    window.employeeData = data; // 更新全局数据
+                    const today = formatDate(new Date());
+                    
+                    // 只过滤今天完成的任务
+                    const completedTasks = data.employees.filter(task => 
+                        task.completedTime === today && task.status === '已完成'
+                    );
+
+                    // 更新统计信息
+                    document.getElementById('taskSummary').innerHTML = `
+                        <div class="stat-box">
+                            <div class="stat-number">${completedTasks.length}</div>
+                            <div class="stat-label">今日完成任务数</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">${completedTasks.reduce((acc, task) => acc + (task.hours || 0), 0)}</div>
+                            <div class="stat-label">完成工时</div>
+                        </div>
+                    `;
+
+                    // 更新任务列表
+                    document.querySelector('#completedTasks .task-list').innerHTML = '';
+                    completedTasks.forEach(task => {
+                        document.querySelector('#completedTasks .task-list')
+                            .appendChild(createTaskElement(task));
+                    });
+
+                    // 显示完成任务区域
+                    document.getElementById('completedTasks').style.display = 
+                        completedTasks.length ? 'block' : 'none';
+                })
+                .catch(error => console.error('加载数据失败:', error));
+        }
+
+        // 初始加载
+        updateTasks();
+        
+        // 每2秒刷新一次
+        setInterval(updateTasks, 2000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+{
+    "employees": [
+        {
+            "name": "刘迪",
+            "task": "污染源排气筒-特殊模板后端接口开发",
+            "startTime": "2025-03-06",
+            "endTime": "2025-03-06",
+            "status": "已完成",
+            "hours": 8,
+            "completedTime": "2025-03-06"
+        },
+        {
+            "name": "刘迪",
+            "task": "自动报告-检出限展示方式修改 明天到期",
+            "startTime": "2025-03-06",
+            "endTime": "2025-03-06",
+            "status": "已完成",
+            "hours": 8,
+            "completedTime": "2025-03-06"
+        },
+        {
+            "name": "刘迪",
+            "task": "下载中心-采样记录复测展示 明天到期",
+            "startTime": "2025-03-06",
+            "endTime": "2025-03-06",
+            "status": "已完成",
+            "hours": 8,
+            "completedTime": "2025-03-06"
+        },
+        {
+            "name": "刘迪",
+            "task": "短信签署功能 工时16小时",
+            "startTime": "2025-03-10",
+            "endTime": "2025-03-11",
+            "status": "待处理",
+            "hours": 16,
+            "completedTime": "--"
+        },
+        {
+            "name": "刘迪",
+            "task": "任务单作废 工时8 明天到期",
+            "startTime": "2025-03-07",
+            "endTime": "2025-03-07",
+            "status": "待处理",
+            "hours": 8,
+            "completedTime": "--"
+        },
+        {
+            "name": "刘迪",
+            "task": "自动报告-差异化报告生成设计 按照企业划分 考虑中。。。",
+            "startTime": "--",
+            "endTime": "--",
+            "status": "待处理",
+            "hours": 8,
+            "completedTime": "--"
+        },
+        {
+            "name": "刘迪",
+            "task": "标准物质修改 工时16小时",
+            "startTime": "2025-03-12",
+            "endTime": "2025-03-13",
+            "status": "待处理",
+            "hours": 16,
+            "completedTime": "--"
+        },
+        {
+            "name": "刘迪",
+            "task": "样品信息-待讨论",
+            "startTime": "--",
+            "endTime": "--",
+            "status": "待处理",
+            "hours": 8,
+            "completedTime": "--"
+        },
+        {
+            "name": "吕晓雨",
+            "task": "报告改造 工时4小时 今天到期",
+            "startTime": "2025-03-06",
+            "endTime": "2025-03-06",
+            "status": "已完成",
+            "hours": 4,
+            "completedTime": "2025-03-06"
+        },
+        {
+            "name": "吕晓雨",
+            "task": "追加空白，之前的逻辑是先追加项目在对追加的项目进行追加空白...",
+            "startTime": "2025-03-11",
+            "endTime": "2025-03-12",
+            "status": "待处理",
+            "hours": 8,
+            "completedTime": "--"
+        },
+        {
+            "name": "吕晓雨",
+            "task": "全程序空白、运输空白在采样记录里面也加上，全程空白可以有多...",
+            "startTime": "2025-03-10",
+            "endTime": "2025-03-10",
+            "status": "待处理",
+            "hours": 8,
+            "completedTime": "--"
+        },
+        {
+            "name": "吕晓雨",
+            "task": "认证产品库里面有重复的数据，后期整理删除 工作量... 还剩2天到期",
+            "startTime": "2025-03-07",
+            "endTime": "2025-03-07",
+            "status": "待处理",
+            "hours": 8,
+            "completedTime": "--"
+        },
+        {
+            "name": "吕晓雨",
+            "task": "下载中心改造 工作量8小时",
+            "startTime": "2025-03-06",
+            "endTime": "2025-03-06",
+            "status": "已完成",
+            "hours": 8,
+            "completedTime": "2025-03-06"
+        },
+        {
+            "name": "吕晓雨",
+            "task": "原始记录、报告上传到省平台",
+            "startTime": "2025-03-06",
+            "endTime": "2025-03-06",
+            "status": "待处理",
+            "hours": 8,
+            "completedTime": "--"
+        },
+        {
+            "name": "巩政龙",
+            "task": "采样记录-编辑记录删除按钮权限只给管理员 工时3小时",
+            "startTime": "2025-03-06",
+            "endTime": "2025-03-06",
+            "status": "已完成",
+            "hours": 2,
+            "completedTime": "2025-03-06"
+        },
+        {
+            "name": "巩政龙",
+            "task": "污染源-排气筒处理 工时8小时 明天到期",
+            "startTime": "2025-03-06",
+            "endTime": "2025-03-06",
+            "status": "已完成",
+            "hours": 8,
+            "completedTime": "2025-03-06"
+        },
+        {
+            "name": "巩政龙",
+            "task": "小程序-报告查看功能 工时8小时",
+            "startTime": "2025-03-07",
+            "endTime": "2025-03-07",
+            "status": "待处理",
+            "hours": 8,
+            "completedTime": "--"
+        },
+        {
+            "name": "巩政龙",
+            "task": "微生物特殊版-页面参照油参数 工时16 还剩2天到期",
+            "startTime": "2025-03-10",
+            "endTime": "2025-03-10",
+            "status": "待处理",
+            "hours": 16,
+            "completedTime": "--"
+        },
+        {
+            "name": "巩政龙",
+            "task": "APP 添加一个正式环境: labsmartnote.com",
+            "startTime": "--",
+            "endTime": "--",
+            "status": "待处理",
+            "hours": 8,
+            "completedTime": "--"
+        },
+        {
+            "name": "巩政龙",
+            "task": "模板外的计算引用表格的数据",
+            "startTime": "--",
+            "endTime": "--",
+            "status": "待处理",
+            "hours": 8,
+            "completedTime": "--"
+        },
+        {
+            "name": "巩政龙",
+            "task": "app需卸载重装或者切掉重新打开，否则模板里新增的特殊模板按钮点不动",
+            "startTime": "--",
+            "endTime": "--",
+            "status": "待处理",
+            "hours": 8,
+            "completedTime": "--"
+        },
+        {
+            "name": "刘迪",
+            "task": "保留小数点后位数更新取舍策略",
+            "status": "已完成",
+            "startTime": "2025-03-06",
+            "endTime": "2025-03-06",
+            "completedTime": "2025-03-06"
+        },
+        {
+            "name": "巩政龙",
+            "task": "WebSocket前端功能修改以及提示样式调整",
+            "status": "待处理",
+            "startTime": "2025-03-11",
+            "endTime": "2025-03-11",
+            "completedTime": "--"
+        }
+    ]
+}
